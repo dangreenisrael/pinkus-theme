@@ -28,6 +28,7 @@ $context['related_posts'] = Timber::get_posts($args);
 $category = get_the_category()[0];
 $context['category']['name'] = $category->name;
 $context['category']['link'] = get_category_link( $category->term_id);
+$context['current_url'] = get_site_url().$_SERVER['REQUEST_URI'];
 
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );

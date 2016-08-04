@@ -3,7 +3,7 @@
 {% block content %}
 
 	<article>
-		<header class="page-title-container" style="background: #09131d url('{{ theme.link }}/sol/images/breadcrumb.jpg') repeat  ">
+		<header class="page-title-container">
 			<div class="page-title custom-padding">
 				<div class="container">
 					<h1 class="title-center entry-title">{{ post.title }}</h1>
@@ -46,11 +46,12 @@
 									<div class="blog-container">
 										{{ post.content }}
 										<div class="share-wrap">
-											<span>Share us on:</span>
+											<span>{{ options.share_text }}</span>
 											<ul class="social-share">
-												<li><a href="blog-details.html#"><i class="fa fa-twitter"></i></a></li>
-												<li><a href="blog-details.html#"><i class="fa fa-facebook"></i></a></li>
-												<li><a href="blog-details.html#"><i class="fa fa-google-plus"></i></a></li>
+												<li><a href="https://www.facebook.com/sharer/sharer.php?u={{ current_url }}"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="https://twitter.com/home?status={{ current_url }}"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ current_url }}&title={{ page.title }}"><i class="fa fa-linkedin"></i></a></li>
+												<li><a href="https://plus.google.com/share?url={{ current_url }}"><i class="fa fa-google-plus"></i></a></li>
 											</ul>
 										</div>
 									</div>

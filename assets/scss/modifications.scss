@@ -32,6 +32,11 @@
   }
 }
 
+.grey-bg-home{
+  background: #282828 url( $theme-url + '/assets/images/footer-bg.png') no-repeat scroll right bottom;
+  color: white;
+}
+
 .alignright{
   float: right;
   margin: 15px;
@@ -51,6 +56,12 @@
   Nav Bar
  ******************/
 .navbar-custom {
+  .dropdown-menu{
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
   .dropdown-menu > li > a {
     border-left: 1px solid rgba(0, 0, 0, 0.05) !important;
     border-right: 1px solid rgba(0, 0, 0, 0.05) !important;
@@ -64,8 +75,13 @@
       visibility: visible;
       opacity: 1;
     }
+    ul{
+      left: 0;
+      position: absolute;
+    }
   }
 }
+
 
 
 @media (min-width: 768px){
@@ -86,11 +102,12 @@
 
 .site-footer{
   padding: 0;
-  background: #282828 url( $theme-url + '/sol/images/footer-bg.png') no-repeat scroll right bottom;
+  background: #282828 url( $theme-url + '/assets/images/footer-bg.png') no-repeat scroll right bottom;
   a{
     color: white;
   }
 }
+
 
 /********************
  Side-bar
@@ -239,6 +256,10 @@ ul.social-share li a:hover {
   color: #d6b161;
 }
 
+
+.page-title-container{
+  background: #09131d url( "#{$breadcrumb_bg}" ) repeat
+}
 
 /***************
  News Letter

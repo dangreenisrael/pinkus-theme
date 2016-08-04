@@ -2,7 +2,13 @@
     <div id="boot-slider" class=" slide carousel-fade boot-slider control-one">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-            <div class="item active"> <img src="{{theme.uri}}/sol/images/slider/1.jpg" alt="First slide" class="img-responsive">
+            <div class="item active">
+
+                <img src="{{ theme.theme_mod('hero_image')| resize(1500) }}" alt="First slide" class="img-responsive" srcset="
+                    {{ theme.theme_mod('hero_image') | resize(1000) | retina(1) }}  1x,
+                    {{ theme.theme_mod('hero_image') | resize(2000) | retina(2) }}  2x,
+                    {{ theme.theme_mod('hero_image') | resize(3000) | retina(3) }}  3x
+                    ">
                 <div class="carousel-caption">
                     <h1 class="animated fadeInDown delay-1">
                         {{ page.hero_main_text }}

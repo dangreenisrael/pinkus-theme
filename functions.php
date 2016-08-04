@@ -1,13 +1,8 @@
 <?php
-require ("temp/list_icons.php");
-//
-//$icons = List_Icons::get_class_list("sol/css/et-line-fonts.css", "icon");
-//print_r($icons);
-//exit;
-
 require_once(__DIR__ . "/acf/fields.php");
 require_once(__DIR__ . '/vendor/autoload.php');
 require_once(__DIR__ . '/vendor/trampoline-digital/wp-scss/wp-scss.php' );
+require_once(__DIR__ . '/kirki.php');
 $timber = new \Timber\Timber();
 
 
@@ -133,8 +128,9 @@ function my_scripts() {
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
 	wp_enqueue_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery') );
-
-
+	wp_enqueue_script( 'modernizer', get_template_directory_uri() ."/assets/js/modernizr.js", array('jquery') );
+	wp_enqueue_script( 'magnific-popup', get_template_directory_uri() ."/assets/js/magnific-popup/jquery.magnific-popup.min.js", array('jquery') );
+	wp_enqueue_script( 'custom', get_template_directory_uri() ."/assets/js/custom.js", array('jquery') );
 
 	// Enqueue our stylesheet and JS file with a jQuery dependency.
 	// Note that we aren't using WordPress' default style.css, and instead enqueueing the file of compiled Sass.
@@ -142,9 +138,12 @@ function my_scripts() {
 	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
 	wp_enqueue_style( 'et-line-fonts', get_template_directory_uri() . '/assets/css/et-line-fonts.css', 1.0);
 	wp_enqueue_style( 'sol-styles', get_template_directory_uri() . '/assets/scss/global.scss', 1.0);
+	wp_enqueue_style( 'et-line-fonts', get_template_directory_uri() . '/assets/css/et-line-fonts.css', 1.0);
+//	wp_enqueue_style( 'magnific-popup', get_template_directory_uri() . '/assets/js/magnific-popup/magnific-popup.css', 1.0);
+	wp_enqueue_style( 'animate', get_template_directory_uri() . '/assets/css/animate.min.css', 1.0);
 
-
-//	wp_enqueue_script( 'my-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_style('google-fonts-1', 'https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700');
+    wp_enqueue_style('google-fonts-2', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700,800');
 }
 
 add_action( 'wp_enqueue_scripts', 'my_scripts' );

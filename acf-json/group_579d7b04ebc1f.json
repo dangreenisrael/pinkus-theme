@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_579d7b127d131",
-            "label": "Steps_Heading",
-            "name": "step_heading",
+            "label": "Steps Heading",
+            "name": "steps_heading",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -26,7 +26,7 @@
         {
             "key": "field_579d7b2f7d132",
             "label": "Step Subheading",
-            "name": "step_subheading",
+            "name": "steps_subheading",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -141,5 +141,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1469938850
+    "modified": 1470329166
 }
