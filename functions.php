@@ -3,11 +3,17 @@ require_once(__DIR__ . "/acf/fields.php");
 require_once(__DIR__ . '/vendor/autoload.php');
 require_once(__DIR__ . '/vendor/trampoline-digital/wp-scss/wp-scss.php' );
 require_once(__DIR__ . '/kirki.php');
+require_once(__DIR__ . '/theme_update_check.php');
+$MyUpdateChecker = new ThemeUpdateChecker(
+	'pinkus-theme',
+	'https://kernl.us/api/v1/theme-updates/57a3c0ed0682367522230c07theme_update_check.php/'
+);
+
+
 $timber = new \Timber\Timber();
 
-
 // Create our version of the TimberSite object
-class StarterSite extends Timber\Site {
+class PinkusSite extends Timber\Site {
 
 	// This function applies some fundamental WordPress setup, as well as our functions to include custom post types and taxonomies.
 	function __construct() {
@@ -112,7 +118,7 @@ class StarterSite extends Timber\Site {
 	}
 }
 
-new StarterSite();
+new PinkusSite();
 
 
 /*
