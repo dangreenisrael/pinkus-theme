@@ -1,0 +1,16 @@
+{
+    "extra": {
+        "installer-paths": {
+            "./vendor/{$name}/": [
+                "wpackagist-plugin/*",
+                "type:wordpress-plugin"
+            ]
+        }
+    },
+    "require": {
+        "timber/timber": "^1.1",
+        "trampoline-digital/wp-scss": "dev-master",
+        "trampoline-digital/acf-custom-font-icons": "dev-master",
+        "aristath/kirki" : "2.3.2"
+    }
+}

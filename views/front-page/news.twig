@@ -1,0 +1,23 @@
+<section class="section-padding">
+    <div class="container">
+        <div class="section-title"> <strong>{{ page.news_title }}</strong>
+            <h1 class="heading bold">{{ page.news_subtitle }}</h1>
+            <hr>
+        </div>
+        <!-- End title-section -->
+
+        <div class="blog-grid padding-top-30">
+            <div class="row">
+                {% for post in posts %}
+                    <div class="col-md-4 col-sm-6">
+                        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- End team-members -->
+
+    </div>
+    <!-- end container -->
+    <!-- end team-section -->
+</section>

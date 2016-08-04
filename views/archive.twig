@@ -1,0 +1,65 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<!-- =-=-=-=-=-=-= PAGE SECTION =-=-=-=-=-=-= -->
+	<div id="page-section">
+
+		<!-- =-=-=-=-=-=-= PAGE HEADING =-=-=-=-=-=-= -->
+		<div class="page-title-container" style="background: #09131d url('{{ theme.link }}/sol/images/breadcrumb.jpg') repeat  ">
+			<div class="page-title">
+				<div class="container">
+					<h1 class="title-center entry-title">{{ title }}</h1>
+				</div>
+			</div>
+			<ul class="breadcrumbs">
+				<li><a href="/">Home</a></li>
+				{% if category %}
+					<li><a href="{{ blog_link }}">Blog</a></li>
+					<li class="active">{{ title }}</li>
+				{% else %}
+					<li class="active">Blog</li>
+				{% endif %}
+
+			</ul>
+		</div>
+		<!-- =-=-=-=-=-=-= PAGE HEADING END =-=-=-=-=-=-= -->
+
+		<!-- =-=-=-=-=-=-= BLOG =-=-=-=-=-=-= -->
+		<section class="section-padding" id="blog">
+			<div class="container">
+				<div class="blog-grid">
+					<div class="row">
+						<!-- =-=-=-=-=-=-= Left Area =-=-=-=-=-=-= -->
+						<div class="col-md-9">
+							<!-- =-=-=-=-=-=-= Blog Grid =-=-=-=-=-=-= -->
+							{% for post in posts %}
+								{% if (loop.index0%2 == 0) and (loop.index0 > 0) %}
+									<div class="clearfix"></div>
+								{% endif %}
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+								</div>
+							{% endfor %}
+						</div>
+						<!-- =-=-=-=-=-=-= Right Side Bar =-=-=-=-=-=-= -->
+						<div class="col-md-3">
+							<aside class="sidebar">
+								<ul>
+									{{ sidebar_widgets }}
+								</ul>
+							</aside>
+						</div>
+					</div>
+					<div class="row">
+						<div class="text-center">
+							{% include "partials/pagination.twig" %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- =-=-=-=-=-=-= BLOG END =-=-=-=-=-=-= -->
+	</div>
+	<!-- =-=-=-=-=-=-= PAGE SECTION END =-=-=-=-=-=-= -->
+{% endblock %}

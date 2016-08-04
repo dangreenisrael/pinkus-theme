@@ -1,0 +1,35 @@
+<!-- Begin MailChimp Signup Form -->
+{% if options.mailchimp_url %}
+    <section id="news-letter">
+        <div class="container">
+            <div id="mc_embed_signup row">
+                <div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+                    <div class="newsletter-title text-center">
+                        <h4>
+                            {{ options.mailer_text }}
+                        </h4>
+                    </div>
+                    <form action="{{ options.mailchimp_url }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll col-sm-12">
+                            <div id="mce-responses" class="clear">
+                                <div class="response alert alert-danger" id="mce-error-response" role="alert" style="display:none"></div>
+                                <div class="response alert alert-success" id="mce-success-response" role="alert" style="display:none"></div>
+                            </div>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4dc3107c26de9b5108edbc0ca_52f2e2559f" tabindex="-1" value=""></div>
+
+                            <div class="input-group">
+                                <div class="mc-field-group">
+                                    <input type="email" value="" placeholder="you@gmail.com" name="EMAIL" class="required email form-control" id="mce-EMAIL">
+                                </div>
+                                <span class="input-group-btn">
+                                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-dark">
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}

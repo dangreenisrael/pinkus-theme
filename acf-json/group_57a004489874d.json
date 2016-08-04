@@ -1,0 +1,90 @@
+{
+    "key": "group_57a004489874d",
+    "title": "Testimonials",
+    "fields": [
+        {
+            "key": "field_57a00459271bc",
+            "label": "Testimonials",
+            "name": "testimonials",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_57a00483271bd",
+            "min": 1,
+            "max": 6,
+            "layout": "table",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_57a00483271bd",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "wpautop",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_57a0048f271be",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image_crop",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "crop_type": "hard",
+                    "target_size": "medium",
+                    "width": 300,
+                    "height": 300,
+                    "preview_size": "medium",
+                    "force_crop": "yes",
+                    "save_in_media_library": "yes",
+                    "retina_mode": "no",
+                    "save_format": "id",
+                    "library": "all"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-front.php"
+            }
+        ]
+    ],
+    "menu_order": 4,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1470323172
+}

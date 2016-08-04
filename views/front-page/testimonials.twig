@@ -1,0 +1,52 @@
+<section  id="testimonials" data-stellar-background-ratio="0" class="testimonial-bg parallex section-padding-100 text-center">
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="6000">
+                <!-- Carousel indicators -->
+                <ol class="carousel-indicators">
+                    {% for testimonial in page.get_field('testimonials') %}
+                        {% set carousel_class = "" %}
+                        {% if loop.index0 == 0 %}
+                            {% set carousel_class = "active" %}
+                        {% endif %}
+                        <li class="{{ carousel_class }}" data-target="#fade-quote-carousel" data-slide-to="{{ loop.index0 }}"></li>
+                    {% endfor %}
+                </ol>
+
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    {% for testimonial in page.get_field('testimonials') %}
+                        {% set carousel_class = "" %}
+                        {% if loop.index0 == 0 %}
+                            {% set carousel_class = "active" %}
+                        {% endif %}
+                        <div class="item {{ carousel_class }}">
+                            <div class="profile-circle">
+                                <img src="{{ TimberImage(testimonial.image).src | resize(100, 100) }}" alt="Testimonials image {{ loop.index }}" class="img-circle" srcset="
+                                    {{ TimberImage(testimonial.image).src | resize(100, 100) | retina(1) }}  1x,
+                                    {{ TimberImage(testimonial.image).src | resize(200, 200) | retina(2) }}  2x,
+                                    {{ TimberImage(testimonial.image).src | resize(300, 300) | retina(3) }}  3x
+                                    ">
+                            </div>
+                            <blockquote>
+                                {{ testimonial.text }}
+                            </blockquote>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+                <!-- Carousel Controlls -->
+
+            </div>
+            <a class="left carousel-control" href="#fade-quote-carousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#fade-quote-carousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,15 @@
+
+{# No specific markup for the home page, yet. Add it here inside a content block! #}
+
+{% extends "page.twig" %}
+
+{% block content %}
+    <div class="front-page">
+        {% include "front-page/hero.twig" %}
+        {% include "front-page/about.twig" %}
+        {% include "front-page/spacer-1.twig" %}
+        {% include "front-page/steps.twig" %}
+        {% include "front-page/testimonials.twig" %}
+        {% include "front-page/news.twig" %}
+    </div>
+{% endblock %}

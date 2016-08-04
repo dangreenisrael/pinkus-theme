@@ -1,0 +1,58 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article>
+		<header class="page-title-container" style="background: #09131d url('{{ theme.link }}/sol/images/breadcrumb.jpg') repeat  ">
+			<div class="page-title custom-padding">
+				<div class="container">
+					<h1 class="title-center entry-title">{{ post.title }}</h1>
+				</div>
+			</div>
+			<ul class="breadcrumbs">
+				<li><a href="/">Home</a></li>
+				<li class="active">{{ post.title }}</li>
+			</ul>
+		</header>
+
+		<main class="section-padding">
+			<div class="container">
+				<div class="blog-grid">
+					<div class="row">
+						<!-- =-=-=-=-=-=-= Left Area =-=-=-=-=-=-= -->
+						<div class="col-md-9">
+							<!-- =-=-=-=-=-=-= Blog Grid =-=-=-=-=-=-= -->
+							<div class="blog-details">
+								<div class="blog-post">
+									<div class="blog-container">
+										{{ post.content }}
+									</div>
+								</div>
+							</div>
+							<!-- =-=-=-=-=-=-= Blog Details End =-=-=-=-=-=-= -->
+
+						</div>
+						<!-- =-=-=-=-=-=-= Right Side Bar =-=-=-=-=-=-= -->
+						<div class="col-md-3">
+							<aside class="sidebar">
+								<ul>
+									{{ sidebar_widgets }}
+								</ul>
+							</aside>
+						</div>
+					</div>
+					<div class="row related-posts">
+						{% for post in posts %}
+							<div class="col-md-4 col-sm-6">
+								{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<!-- End team-members -->
+
+			</div>
+			<!-- end container -->
+			<!-- end team-section -->
+		</main>
+	</article>
+{% endblock %}

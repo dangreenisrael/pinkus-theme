@@ -1,0 +1,93 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<article>
+		<header class="page-title-container" style="background: #09131d url('{{ theme.link }}/sol/images/breadcrumb.jpg') repeat  ">
+			<div class="page-title custom-padding">
+				<div class="container">
+					<h1 class="title-center entry-title">{{ post.title }}</h1>
+				</div>
+			</div>
+			<ul class="breadcrumbs">
+				<li><a href="/">Home</a></li>
+				<li><a href="{{ blog_link }}">Blog</a></li>
+				<li><a href="{{ category.link }}">{{ category.name }}</a></li>
+				<li class="active">{{ post.title }}</li>
+			</ul>
+		</header>
+
+		<main class="section-padding" id="blog">
+			<div class="container">
+				<div class="blog-grid">
+					<div class="row">
+						<!-- =-=-=-=-=-=-= Left Area =-=-=-=-=-=-= -->
+						<div class="col-md-9">
+							<!-- =-=-=-=-=-=-= Blog Grid =-=-=-=-=-=-= -->
+							<div class="blog-details">
+								<div class="blog-post">
+									<div class="blog-image-container">
+										<div class="blog-image-overlay"></div>
+										<img src="{{ post.thumbnail.src | resize(850, 400) }}" class="img-responsive" srcset="
+											{{ post.thumbnail.src | resize(850, 400)   | retina(1) }}  1x,
+											{{ post.thumbnail.src | resize(1700, 800)  | retina(2) }}  2x,
+											{{ post.thumbnail.src | resize(2550, 1200) | retina(3) }}  3x
+											">
+										<div class="blog-info"> <span>By <a href="blog-details.html#">{{post.author.first_name}} {{ post.author.last_name}}</a></span><br>
+											<span>{{ post.post_date|date('F j, Y') }}</span> </div>
+									</div>
+									<div class="small-thumb">
+										<img src="{{ post.post_author | avatar(100) }}" alt="" class="img-responsive" srcset="
+											{{ post.post_author | avatar(100) | retina(1) }} 1x,
+											{{ post.post_author | avatar(200) | retina(2) }} 2x,
+											{{ post.post_author | avatar(300) | retina(3) }} 3x,
+											">
+									</div>
+									<div class="blog-container">
+										{{ post.content }}
+										<div class="share-wrap">
+											<span>Share us on:</span>
+											<ul class="social-share">
+												<li><a href="blog-details.html#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="blog-details.html#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="blog-details.html#"><i class="fa fa-google-plus"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+
+							<!-- =-=-=-=-=-=-= Blog Details End =-=-=-=-=-=-= -->
+
+						</div>
+						<!-- =-=-=-=-=-=-= Right Side Bar =-=-=-=-=-=-= -->
+						<div class="col-md-3">
+							<aside class="sidebar">
+								<ul>
+									{{ sidebar_widgets }}
+								</ul>
+							</aside>
+						</div>
+					</div>
+					<div class="row related-posts">
+						{% for post in related_posts %}
+							<div class="col-md-4 col-sm-6">
+								{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<!-- End team-members -->
+
+			</div>
+			<!-- end container -->
+			<!-- end team-section -->
+		</main>
+	</article>
+
+
+	<!-- =-=-=-=-=-=-= BLOG =-=-=-=-=-=-= -->
+	<!-- =-=-=-=-=-=-= BLOG END =-=-=-=-=-=-= -->
+{% endblock %}

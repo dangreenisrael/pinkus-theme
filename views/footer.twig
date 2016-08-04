@@ -1,0 +1,25 @@
+<footer class="footer-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <p>{{ options.copyright_text }} | Built in Toronto by <a rel="nofollow" href="http://trampolinedigital.com" target="_blank"> Trampoline Digital</a>.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="f-social pull-right">
+                    {% if options.facebook_link %}
+                        <a class="fa fa-facebook" href="{{ options.facebook_link }}"></a>
+                    {% endif %}
+                    {% if options.facebook_link %}
+                        <a class="fa fa-linkedin" href="{{ options.linkedin_link }}"></a>
+                    {% endif %}
+                    {% if options.facebook_link %}
+                        <a class="fa fa-google-plus" href="{{ options.google_plus_link }}"></a>
+                    {% endif %}
+                    {% if options.facebook_link %}
+                        <a class="fa fa-twitter" href="{{ options.twitter_link }}"></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

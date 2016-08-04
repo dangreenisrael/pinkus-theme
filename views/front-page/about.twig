@@ -1,0 +1,32 @@
+<section id="about" class="section-padding">
+    <div class="container">
+        <div class="section-title"> <strong>ABOUT PINKUS CONSULTING</strong>
+            <h1 class="heading bold">HOW WE MAKE MEANINGFUL CHANGE</h1>
+            <hr>
+        </div>
+        <div class="row">
+                {% if page.has_about_video %}
+                <div class="col-md-6">
+                    <div class="youtube">
+                        {{ page.about_video|youtube }}">
+                    </div>
+                </div>
+                {% else %}
+                    <div class="col-md-6 hidden-sm hidden-xs">
+                        <div class="frame">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-pic1 ">
+                                <img alt="image" class="pic-1" src="{{TimberImage(page.get_field('about_image_left')).src}}" >
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-pic-2">
+                                <img alt="image" class="pic-2" src="{{TimberImage(page.get_field('about_image_right')).src}}" >
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            <div class="col-md-6 col-sm-12">
+                {{ page.content }}
+            </div>
+        </div>
+    </div>
+</section>

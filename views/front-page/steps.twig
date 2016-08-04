@@ -1,0 +1,36 @@
+<section id="services" class="section-padding">
+    <div class="container">
+        <div class="section-title"> <strong>10 STEPS</strong>
+            <h1 class="heading bold">THE PINKUS SYSTEM</h1>
+            <hr>
+        </div>
+        <!-- End title-section -->
+        <div class="services-boxes row">
+            {% for step in page.get_field('steps') | bootstrap_col %}
+
+                {% set extra_class = "" %}
+
+                <div class="{{ step.bootstrap_class }}">
+                    <div class="our-services ">
+                        <div class="services-icons">
+                            <i class="{{ step.icon }}"></i>
+                        </div>
+                        <h4>{{ step.title }}</h4>
+                        <p>
+                            {{ step.body }}
+                        </p>
+                    </div>
+                </div>
+                {% if loop.index%3 == 0 %}
+                    <div class="clearfix hidden-sm"></div>
+                {% endif %}
+                {% if loop.index%2 == 0 %}
+                    <div class="clearfix visible-sm-block"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <!-- End services-boxes -->
+    </div>
+    <!-- End container -->
+    <!-- End service-section -->
+</section>
