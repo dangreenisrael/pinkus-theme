@@ -6,7 +6,7 @@ require_once(__DIR__ . '/kirki.php');
 require_once(__DIR__ . '/theme_update_check.php');
 $MyUpdateChecker = new ThemeUpdateChecker(
 	'pinkus-theme',
-	'https://kernl.us/api/v1/theme-updates/57a3c0ed0682367522230c07theme_update_check.php/'
+	'https://kernl.us/api/v1/theme-updates/57a3c0ed0682367522230c07/'
 );
 
 
@@ -133,10 +133,10 @@ function my_scripts() {
 	// Use jQuery from a CDN
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
-	wp_enqueue_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery') );
-	wp_enqueue_script( 'modernizer', get_template_directory_uri() ."/assets/js/modernizr.js", array('jquery') );
-	wp_enqueue_script( 'magnific-popup', get_template_directory_uri() ."/assets/js/magnific-popup/jquery.magnific-popup.min.js", array('jquery') );
-	wp_enqueue_script( 'custom', get_template_directory_uri() ."/assets/js/custom.js", array('jquery') );
+	wp_enqueue_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), null, true );
+	wp_enqueue_script( 'modernizer', get_template_directory_uri() ."/assets/js/modernizr.js", array('jquery') , null, true);
+	wp_enqueue_script( 'magnific-popup', get_template_directory_uri() ."/assets/js/magnific-popup/jquery.magnific-popup.min.js", array('jquery'), null, true );
+	wp_enqueue_script( 'custom', get_template_directory_uri() ."/assets/js/custom.js", array('jquery') , null, true);
 
 	// Enqueue our stylesheet and JS file with a jQuery dependency.
 	// Note that we aren't using WordPress' default style.css, and instead enqueueing the file of compiled Sass.
