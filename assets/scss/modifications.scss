@@ -24,6 +24,12 @@ html, body{
   font-size: 50px;
 }
 
+
+.our-services h4:hover{
+  color: inherit;
+  cursor: inherit;
+}
+
 #testimonials{
   .carousel-control{
     background: none;
@@ -108,6 +114,9 @@ html, body{
   padding: 0;
   background: #282828 url( $theme-url + '/assets/images/footer-bg.png') no-repeat scroll right bottom;
   a{
+    color: white;
+  }
+  .footer-bottom p{
     color: white;
   }
 }
@@ -218,8 +227,12 @@ hr {
 .pagination .current{
   background: transparentize(#d6b161, 50%);
 }
-
-
+.page-title-container{
+  .post-info{
+    color: white;
+    text-align: center;
+  }
+}
 
 .share-wrap {
   padding: 30px 0 0;

@@ -1,19 +1,14 @@
 {% if post.get_thumbnail %}
+	<a href="{{post.link}}">
 	<article class="tease tease-{{post.post_type}}" id="tease-{{post.ID}}">
 		{% block content %}
 				<div class="blog-post">
 					<div class="blog-image-container">
-						<div class="blog-image-overlay"></div>
-						<a href="{{post.link}}">
-							<img src="{{ post.thumbnail.src | resize(400, 225) }}" srcset="
-								{{ post.thumbnail.src | resize(400, 225)  | retina(1) }}  1x,
-								{{ post.thumbnail.src | resize(800, 450)  | retina(2) }}  2x,
-								{{ post.thumbnail.src | resize(1200, 675) | retina(3) }}  3x
-								">
-						</a>
-						<div class="blog-info"> By <a href="{{ blog_link }}">{{ post.author.first_name }} {{ post.author.last_name }}</a></span><br>
-							<span>{{ post.post_date|date('F j, Y') }}</span>
-						</div>
+						<img src="{{ post.thumbnail.src | resize(400, 225) }}" srcset="
+							{{ post.thumbnail.src | resize(400, 225)  | retina(1) }}  1x,
+							{{ post.thumbnail.src | resize(800, 450)  | retina(2) }}  2x,
+							{{ post.thumbnail.src | resize(1200, 675) | retina(3) }}  3x
+							">
 					</div>
 					<div class="small-thumb">
 						<img src="{{ post.post_author | avatar(100) }}" alt="Author avatar" class="img-responsive" srcset="
@@ -23,7 +18,7 @@
 							">
 					</div>
 					<div class="blog-container">
-						<h4><a href="{{post.link}}">{{post.title}}</a></h4>
+						<h4>{{post.title}}</h4>
 						<p>
 							{{post.get_preview(20, true)}}
 						</p>
@@ -31,4 +26,6 @@
 			</div>
 		{% endblock %}
 	</article>
+
+	</a>
 {% endif %}

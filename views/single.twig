@@ -1,13 +1,15 @@
 {% extends "base.twig" %}
 
 {% block content %}
-
 	<article>
 		<header class="page-title-container">
 			<div class="page-title custom-padding">
 				<div class="container">
 					<h1 class="title-center entry-title">{{ post.title }}</h1>
 				</div>
+				<p class="post-info">
+					By {{post.author.first_name}} {{ post.author.last_name}} on {{ post.post_date|date('F j, Y') }}
+				</p>
 			</div>
 			<ul class="breadcrumbs">
 				<li><a href="/">Home</a></li>
@@ -16,25 +18,19 @@
 				<li class="active">{{ post.title }}</li>
 			</ul>
 		</header>
-
 		<main class="section-padding" id="blog">
 			<div class="container">
 				<div class="blog-grid">
 					<div class="row">
-						<!-- =-=-=-=-=-=-= Left Area =-=-=-=-=-=-= -->
 						<div class="col-md-9">
-							<!-- =-=-=-=-=-=-= Blog Grid =-=-=-=-=-=-= -->
 							<div class="blog-details">
 								<div class="blog-post">
 									<div class="blog-image-container">
-										<div class="blog-image-overlay"></div>
 										<img src="{{ post.thumbnail.src | resize(850, 400) }}" class="img-responsive" srcset="
 											{{ post.thumbnail.src | resize(850, 400)   | retina(1) }}  1x,
 											{{ post.thumbnail.src | resize(1700, 800)  | retina(2) }}  2x,
 											{{ post.thumbnail.src | resize(2550, 1200) | retina(3) }}  3x
 											">
-										<div class="blog-info"> <span>By <a href="blog-details.html#">{{post.author.first_name}} {{ post.author.last_name}}</a></span><br>
-											<span>{{ post.post_date|date('F j, Y') }}</span> </div>
 									</div>
 									<div class="small-thumb">
 										<img src="{{ post.post_author | avatar(100) }}" alt="" class="img-responsive" srcset="
@@ -57,13 +53,7 @@
 									</div>
 								</div>
 							</div>
-
-
-
-							<!-- =-=-=-=-=-=-= Blog Details End =-=-=-=-=-=-= -->
-
 						</div>
-						<!-- =-=-=-=-=-=-= Right Side Bar =-=-=-=-=-=-= -->
 						<div class="col-md-3">
 							<aside class="sidebar">
 								<ul>
@@ -80,15 +70,7 @@
 						{% endfor %}
 					</div>
 				</div>
-				<!-- End team-members -->
-
 			</div>
-			<!-- end container -->
-			<!-- end team-section -->
 		</main>
 	</article>
-
-
-	<!-- =-=-=-=-=-=-= BLOG =-=-=-=-=-=-= -->
-	<!-- =-=-=-=-=-=-= BLOG END =-=-=-=-=-=-= -->
 {% endblock %}

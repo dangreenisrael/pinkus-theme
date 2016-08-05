@@ -13,19 +13,19 @@
  * @since   Timber 0.1
  */
 
-$context = \Timber\Timber::get_context();
+use Timber\Timber;
+$context = Timber::get_context();
 
 // We can access the loop of WordPress posts with the 'posts' variable.
-$context['posts'] = \Timber\Timber::get_posts();
-$context['pagination'] = \Timber\Timber::get_pagination();
-$context['sidebar_widgets'] = \Timber\Timber::get_widgets('sidebar_widgets');
+$context['posts'] = Timber::get_posts();
+$context['pagination'] = Timber::get_pagination();
+$context['sidebar_widgets'] = Timber::get_widgets('blog_sidebar');
 $context['title'] = "Blog";
 $context['options'] = get_fields('options');
-
 
 // If we are on the home page, add a few other templates to our hierarchy.
 $templates = array( 'index.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'front-page.twig', 'home.twig' );
 }
-\Timber\Timber::render( "archive.twig", $context );
+Timber::render( "archive.twig", $context );
