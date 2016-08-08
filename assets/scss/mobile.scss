@@ -1,0 +1,64 @@
+.hide-mobile{
+  display: none;
+}
+
+.section-padding{
+  padding: 50px 0 0;
+}
+
+p{
+  font-size: 20px;
+  line-height: 1.8em;
+  text-align: justify;
+  letter-spacing: inherit;
+}
+
+.section-title{
+  padding-bottom: 0;
+}
+
+#testimonials{
+  display: none;
+}
+
+
+
+.our-services{
+  padding: 10px 0 0 ;
+  h4{
+    font-size: 20px;
+  }
+  .services-icons{
+    font-size: 70px;
+    padding: 0;
+  }
+}
+.spacer *{
+  text-align: center;
+}
+
+
+.blog-details blockquote{
+  line-height: 1.1;
+  padding: 20px 0 20px 50px;
+}
+
+.navbar-custom .navbar-nav {
+  font-size: 18px;
+  line-height: 1.5;
+  .dropdown .dropdown-menu {
+    position: static;
+    display: block;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    > li > a {
+      padding: 10px 25px;
+      font-size: 18px;
+    }
+  }
+}
