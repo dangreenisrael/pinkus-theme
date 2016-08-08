@@ -5,25 +5,16 @@
             <hr>
         </div>
         <div class="row">
+            <div class="col-md-6">
                 {% if page.has_about_video %}
-                <div class="col-md-6">
                     <div class="youtube">
                         {{ page.about_video|youtube }}">
                     </div>
-                </div>
                 {% else %}
-                    <div class="col-md-6 hidden-sm hidden-xs">
-                        <div class="frame">
-                            <div class="col-md-6 col-sm-6 col-xs-12 col-pic1 ">
-                                <img alt="image" class="pic-1" src="{{TimberImage(page.get_field('about_image_left')).src}}" >
-                            </div>
-
-                            <div class="col-md-6 col-sm-6 col-xs-12 col-pic-2">
-                                <img alt="image" class="pic-2" src="{{TimberImage(page.get_field('about_image_right')).src}}" >
-                            </div>
-                        </div>
-                    </div>
+                    <img class="frame" alt="image" src="{{TimberImage(page.get_field('about_image')).src}}" >
                 {% endif %}
+            </div>
+
             <div class="col-md-6 col-sm-12">
                 {{ page.content }}
             </div>
