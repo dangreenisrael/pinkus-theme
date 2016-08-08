@@ -20,55 +20,53 @@
 		</header>
 		<main class="section-padding" id="blog">
 			<div class="container">
-				<div class="blog-grid">
-					<div class="row">
-						<div class="col-md-9">
-							<div class="blog-details">
-								<div class="blog-post">
-									<div class="blog-image-container">
-										<img src="{{ post.thumbnail.src | resize(850, 400) }}" class="img-responsive" srcset="
-											{{ post.thumbnail.src | resize(850, 400)   | retina(1) }}  1x,
-											{{ post.thumbnail.src | resize(1700, 800)  | retina(2) }}  2x,
-											{{ post.thumbnail.src | resize(2550, 1200) | retina(3) }}  3x
-											">
-									</div>
-									<div class="small-thumb">
-										<img src="{{ post.post_author | avatar(100) }}" alt="" class="img-responsive" srcset="
-											{{ post.post_author | avatar(100) | retina(1) }} 1x,
-											{{ post.post_author | avatar(200) | retina(2) }} 2x,
-											{{ post.post_author | avatar(300) | retina(3) }} 3x,
-											">
-									</div>
-									<div class="blog-container">
-										{{ post.content }}
-										<div class="share-wrap">
-											<span>{{ options.share_text }}</span>
-											<ul class="social-share">
-												<li><a href="https://www.facebook.com/sharer/sharer.php?u={{ current_url }}"><i class="fa fa-facebook"></i></a></li>
-												<li><a href="https://twitter.com/home?status={{ current_url }}"><i class="fa fa-twitter"></i></a></li>
-												<li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ current_url }}&title={{ page.title }}"><i class="fa fa-linkedin"></i></a></li>
-												<li><a href="https://plus.google.com/share?url={{ current_url }}"><i class="fa fa-google-plus"></i></a></li>
-											</ul>
-										</div>
+				<div class="row">
+					<div class="col-md-9">
+						<div class="blog-details">
+							<div class="blog-post">
+								<div class="blog-image-container">
+									<img src="{{ post.thumbnail.src | resize(850, 400) }}" class="img-responsive" srcset="
+										{{ post.thumbnail.src | resize(850, 400)   | retina(1) }}  1x,
+										{{ post.thumbnail.src | resize(1700, 800)  | retina(2) }}  2x,
+										{{ post.thumbnail.src | resize(2550, 1200) | retina(3) }}  3x
+										">
+								</div>
+								<div class="small-thumb">
+									<img src="{{ post.post_author | avatar(100) }}" alt="" class="img-responsive" srcset="
+										{{ post.post_author | avatar(100) | retina(1) }} 1x,
+										{{ post.post_author | avatar(200) | retina(2) }} 2x,
+										{{ post.post_author | avatar(300) | retina(3) }} 3x,
+										">
+								</div>
+								<div class="blog-container">
+									{{ post.content }}
+									<div class="share-wrap">
+										<span>{{ options.share_text }}</span>
+										<ul class="social-share">
+											<li><a href="https://www.facebook.com/sharer/sharer.php?u={{ current_url }}"><i class="fa fa-facebook"></i></a></li>
+											<li><a href="https://twitter.com/home?status={{ current_url }}"><i class="fa fa-twitter"></i></a></li>
+											<li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ current_url }}&title={{ page.title }}"><i class="fa fa-linkedin"></i></a></li>
+											<li><a href="https://plus.google.com/share?url={{ current_url }}"><i class="fa fa-google-plus"></i></a></li>
+										</ul>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-3">
-							<aside class="sidebar">
-								<ul>
-									{{ sidebar_widgets }}
-								</ul>
-							</aside>
+					</div>
+					<div class="col-md-3">
+						<aside class="sidebar">
+							<ul>
+								{{ sidebar_widgets }}
+							</ul>
+						</aside>
+					</div>
+				</div>
+				<div class="row related-posts">
+					{% for post in related_posts %}
+						<div class="col-md-4 col-sm-6">
+							{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 						</div>
-					</div>
-					<div class="row related-posts">
-						{% for post in related_posts %}
-							<div class="col-md-4 col-sm-6">
-								{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-							</div>
-						{% endfor %}
-					</div>
+					{% endfor %}
 				</div>
 			</div>
 		</main>
