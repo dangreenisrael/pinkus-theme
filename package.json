@@ -1,0 +1,22 @@
+{
+  "name": "pinkus-theme",
+  "version": "1.0.0",
+  "description": "Pinkus Theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trampoline-digital/pinkus-theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trampoline-digital/pinkus-theme/issues"
+  },
+  "homepage": "https://github.com/trampoline-digital/pinkus-theme",
+  "dependencies": {
+    "onscreen": "^1.2.0"
+  }
+}

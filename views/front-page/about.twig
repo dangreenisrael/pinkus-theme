@@ -1,5 +1,5 @@
 <section id="about" class="section-padding">
-    <div class="container">
+    <div class="container ">
         <div class="section-title"> <strong>ABOUT PINKUS CONSULTING</strong>
             <h1 class="heading bold">HOW WE MAKE MEANINGFUL CHANGE</h1>
             <hr>
@@ -11,7 +11,9 @@
                         {{ page.about_video|youtube }}">
                     </div>
                 {% else %}
-                    <img class="frame" alt="image" src="{{TimberImage(page.get_field('about_image')).src}}" >
+                    <div>
+                        <img class="frame" alt="image" src="{{TimberImage(page.get_field('about_image')).src}}" >
+                    </div>
                 {% endif %}
             </div>
 

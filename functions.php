@@ -131,12 +131,18 @@ new PinkusSite();
 function my_scripts() {
 
 	// Use jQuery from a CDN
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
+//	wp_deregister_script('jquery');
+//	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
+//	wp_register_script('jquery');
 	wp_enqueue_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), null, true );
 	wp_enqueue_script( 'modernizer', get_template_directory_uri() ."/assets/js/modernizr.js", array('jquery') , null, true);
-//	wp_enqueue_script( 'magnific-popup', get_template_directory_uri() ."/assets/js/magnific-popup/jquery.magnific-popup.min.js", array('jquery'), null, true );
-	wp_enqueue_script( 'custom', get_template_directory_uri() ."/assets/js/custom.js", array('jquery') , null, true);
+//	wp_enqueue_script( 'waypoints', get_template_directory_uri() ."/node_modules/waypoints/lib/noframework.waypoints.min.js", array('jquery') , null, true);
+//	wp_enqueue_script( 'waypoints-jquery', get_template_directory_uri() ."/node_modules/waypoints/lib/jquery.waypoints.min.js", array('jquery') , null, true);
+//	wp_enqueue_script( 'inview', get_template_directory_uri() ."/node_modules/waypoints/lib/shortcuts/inview.min.js", array('jquery', 'waypoints') , null, true);
+//	wp_enqueue_script( 'onscreen', get_template_directory_uri() ."/node_modules/onscreen/dist/on-screen.umd.min.js", array('jquery') , null, true);
+
+//	wp_enqueue_script( 'custom', get_template_directory_uri() ."/assets/js/custom.js", array('jquery') , null, true);
+//	wp_enqueue_script( 'fade', get_template_directory_uri() ."/assets/js/jquery.fade.js", array('jquery') , null, true);
 
 	// Enqueue our stylesheet and JS file with a jQuery dependency.
 	// Note that we aren't using WordPress' default style.css, and instead enqueueing the file of compiled Sass.
@@ -145,7 +151,6 @@ function my_scripts() {
 	wp_enqueue_style( 'et-line-fonts', get_template_directory_uri() . '/assets/css/et-line-fonts.css', 1.0);
 	wp_enqueue_style( 'global', get_template_directory_uri() . '/assets/scss/global.scss', 1.0);
 	wp_enqueue_style( 'et-line-fonts', get_template_directory_uri() . '/assets/css/et-line-fonts.css', 1.0);
-//	wp_enqueue_style( 'magnific-popup', get_template_directory_uri() . '/assets/js/magnific-popup/magnific-popup.css', 1.0);
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/assets/css/animate.min.css', 1.0);
 
 	wp_enqueue_style('google-fonts-1', 'https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700');
