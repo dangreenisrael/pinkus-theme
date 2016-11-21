@@ -17,27 +17,27 @@
 
 		<main >
 			<div class="container">
-				<div class="page-header">
-					<p>
-						{{ page.content }}
-					</p>
-				</div>
-				<ul class="timeline">
-					{% for item in process_items %}
-					<li class=" {{ cycle(['timeline-inverted', ''], loop.index) }}">
-						<div class="timeline-badge">
-							<i class="icon {{ item.icon }}"></i></div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<h4 class="timeline-title">{{ item.title }}</h4>
-							</div>
-							<div class="timeline-body">
-								<p>{{ item.body }}</p>
-							</div>
-						</div>
-					</li>
-					{% endfor %}
-				</ul>
+				<section class="section-padding-60">
+					{{ page.content }}
+				</section>
+				<section>
+					<ul class="timeline">
+						{% for item in process_items %}
+							<li class=" {{ cycle(['timeline-inverted', ''], loop.index) }}">
+								<div class="timeline-badge">
+									<i class="icon {{ item.icon }}"></i></div>
+								<div class="timeline-panel">
+									<heading class="timeline-heading">
+										<h3 class="timeline-title">{{ item.title }}</h3>
+									</heading>
+									<div class="timeline-body">
+										<p>{{ item.body }}</p>
+									</div>
+								</div>
+							</li>
+						{% endfor %}
+					</ul>
+				</section>
 			</div>
 
 		</main>
