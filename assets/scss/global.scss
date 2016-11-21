@@ -1,5 +1,6 @@
 @import "original";
 @import "modifications";
+@import "timeline/timeline";
 @media (max-width: 767px) {
   @import "mobile";
 }

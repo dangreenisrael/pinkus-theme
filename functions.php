@@ -170,7 +170,10 @@ add_action( 'wp_enqueue_scripts', 'my_scripts' );
 
 if( function_exists('acf_add_options_page') ) {
 
-	acf_add_options_page();
+
+	acf_add_options_page('Options');
+	acf_add_options_page('Clients');
+	acf_add_options_page('Process');
 
 }
 

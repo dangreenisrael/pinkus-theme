@@ -1,0 +1,42 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article>
+		<header class="page-title-container">
+			<div class="page-title custom-padding">
+				<div class="container">
+					<h1 class="title-center entry-title">{{ page.title }}</h1>
+				</div>
+			</div>
+			<ul class="breadcrumbs">
+				<li><a href="/">Home</a></li>
+				<li class="active">{{ page.title }}</li>
+			</ul>
+		</header>
+
+		<main>
+			<section class="section-padding">
+				<div class="container">
+					{% for client in clients %}
+						<div class="row section-padding-60">
+							{% if loop.index is odd %}
+								<div class="col-sm-3">
+									<img src="{{ client.image.url| resize(250) }}" alt="First slide" class="img-responsive" srcset=" {{ client.image.url| resize(250) | retina(1) }}  1x, {{ client.image.url | retina(2) }}  2x">
+								</div>
+							{% else %}
+								<div class="col-sm-3 pull-right">
+									<img src="{{ client.image.url| resize(250) }}" alt="First slide" class="img-responsive" srcset=" {{ client.image.url| resize(250) | retina(1) }}  1x, {{ client.image.url | retina(2) }}  2x">
+								</div>
+							{% endif %}
+
+							<div class="col-sm-8">
+								<h2>{{ client.title }}</h2>
+								<p>{{ client.body }}</p>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</section>
+		</main>
+	</article>
+{% endblock %}
