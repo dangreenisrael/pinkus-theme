@@ -1,25 +1,76 @@
-<footer class="footer-bottom">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <p>{{ options.copyright_text }} | Built in Toronto by <a rel="nofollow" href="http://trampolinedigital.com" target="_blank"> Trampoline Digital</a>.</p>
-            </div>
-            <div class="col-md-4">
-                <div class="f-social pull-right">
-                    {% if options.facebook_link %}
-                        <a class="fa fa-facebook" href="{{ options.facebook_link }}"></a>
-                    {% endif %}
-                    {% if options.facebook_link %}
-                        <a class="fa fa-linkedin" href="{{ options.linkedin_link }}"></a>
-                    {% endif %}
-                    {% if options.facebook_link %}
-                        <a class="fa fa-google-plus" href="{{ options.google_plus_link }}"></a>
-                    {% endif %}
-                    {% if options.facebook_link %}
-                        <a class="fa fa-twitter" href="{{ options.twitter_link }}"></a>
-                    {% endif %}
+
+
+<footer id="page-section-footer">
+    <!-- =-=-=-=-=-=-= FOOTER =-=-=-=-=-=-= -->
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <h4 class="space30">About us</h4>
+                    <p>
+                        {{ options.footer_paragraph }}
+                    </p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <h4 class="space30">Recent Posts</h4>
+                    <ul class="f-posts">
+                        {% for post in recent_posts %}
+                            <li>
+                                <img src="{{ post.thumbnail.src }}" class="img-responsive">
+                                <h5 class="with-image">
+                                    <a href="{{ post.permalink }}">
+                                        {{ post.title }}
+                                    </a>
+                                </h5>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <h4 class="space30">Contact</h4>
+                    <ul class="c-info">
+                        {% if options.address %}
+                            <li>
+                                <i class="fa fa-map-marker"></i>
+                                <a target="_blank" href="http://maps.google.com/?q={{ options.address }}">{{ options.address }}</a>
+                            </li>
+                        {% endif %}
+                        {% if options.phone %}
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <a target="_blank" href="tel:{{ options.phone }}">{{ options.phone }}</a>
+                            </li>
+                        {% endif %}
+                        {% if options.email %}
+                            <li>
+                                <i class="fa fa-envelope-o"></i>
+                                <a target="_blank" href="mailto:{{ options.email }}">
+                                    {{ options.email }}</a>
+                            </li>
+                        {% endif %}
+                        {% if options.linkedin_link %}
+                            <li>
+                                <i class="fa fa-linkedin"></i>
+                                <a target="_blank" href="{{ options.linkedin_link }}">
+                                    LinkedIn
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                    <div class="clearfix space10"></div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <p>{{ options.copyright_text }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =-=-=-=-=-=-= FOOTER END =-=-=-=-=-=-= -->
 </footer>

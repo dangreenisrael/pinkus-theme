@@ -1,0 +1,95 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article>
+		<header class="page-title-container">
+			<div class="page-title custom-padding">
+				<div class="container">
+					<h1 class="title-center entry-title">{{ page.title }}</h1>
+				</div>
+			</div>
+			<ul class="breadcrumbs">
+				<li><a href="/">Home</a></li>
+				<li class="active">{{ page.title }}</li>
+			</ul>
+		</header>
+
+
+		<main >
+			<section class="section-padding" >
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<img src="{{ page.thumbnail.src| resize(1000) }}" alt="First slide" class="img-responsive" srcset="
+						{{ page.thumbnail.src| resize(1000) | retina(1) }}  1x,
+						{{ page.thumbnail.src | retina(2) }}  2x">
+						</div>
+
+						<div class="col-md-6 col-sm-12">
+							{{ page.content }}
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="grey-bg-home section-padding-70 spacer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+							<div class="parallex-text">
+								<h4>{{ page.spacer_heading }}</h4>
+								<p>{{ page.spacer_text }}</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="parallex-button">
+								<a class="section-scroll page-scroll btn btn-lg btn-clean" href="{{function('get_permalink', page.button_link)}}">{{ page.button_text }}
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<section class=" section-padding">
+				<div class="container">
+					<!-- End title-section -->
+					<div class="row">
+						<!-- end col-md-6 -->
+						<div class="col-md-5  hide-mobile">
+
+							<img src="{{TimberImage(page.get_field('middle_image')).src}}" />
+
+							<!-- end choose-image -->
+						</div>
+						<!-- end col-md-5 -->
+
+						<div class="col-md-6 col-md-offset-1">
+							<p>
+								{{page.get_field('middle_lead_in_text')}}
+							</p>
+							<div class="choose-services">
+								<ul class="choose-list">
+									<!-- feature -->
+									{% for item in page.get_field('middle_repeater') %}
+										<li>
+											<div class="choose-box"> <span class="iconbox">
+																<i class="{{ item.icon }}"></i>
+															</span>
+												<div class="choose-box-content">
+													<h4>{{ item.heading }}</h4>
+													<p>{{ item.text }}</p>
+												</div>
+											</div>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+
+					</div>
+					<!-- end row -->
+				</div>
+			</section>
+		</main>
+	</article>
+{% endblock %}

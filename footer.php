@@ -8,7 +8,16 @@ if ( ! isset( $timberContext ) ) {
 	throw new \Exception( 'Timber context not set in footer.' );
 }
 
+use Timber\Timber;
+
+
+
 $timberContext['content'] = ob_get_contents();
+
+$timberContext['content']['recent_posts'] = Timber::get_posts(array(
+	'posts_per_page' => 2,
+	'orderby'        => 'date'
+));
 
 ob_end_clean();
 $templates = array( 'page-plugin.twig' );

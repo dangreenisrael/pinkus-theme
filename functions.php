@@ -15,6 +15,7 @@ $timber = new \Timber\Timber();
 // Create our version of the TimberSite object
 class PinkusSite extends Timber\Site {
 
+
 	// This function applies some fundamental WordPress setup, as well as our functions to include custom post types and taxonomies.
 	function __construct() {
 		add_theme_support( 'post-formats' );
@@ -63,6 +64,14 @@ class PinkusSite extends Timber\Site {
 		$context['blog_link'] = get_permalink( get_option( 'page_for_posts' ) );
 
 		// This 'site' context below allows you to access main site information like the site title or description.
+
+		$context['recent_posts'] = Timber\Timber::get_posts(array(
+			'posts_per_page' => 3,
+			'orderby'        => 'date'
+		));
+
+
+
 		$context['site'] = $this;
 		return $context;
 	}
@@ -107,7 +116,6 @@ class PinkusSite extends Timber\Site {
 		function avatar($user_id, $size){
 			return get_avatar_url( $user_id, array(), null);
 		}
-
 
 		$twig->addExtension( new Twig_Extension_StringLoader() );
 		$twig->addFilter( new Twig_SimpleFilter( 'youtube' , 'youtube_embed') );

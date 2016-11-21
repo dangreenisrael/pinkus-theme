@@ -1,53 +1,11 @@
 {
-    "key": "group_579cbd0191864",
-    "title": "Site-wide Options",
+    "key": "group_58322298e8b4e",
+    "title": "Misc Spaces",
     "fields": [
         {
-            "key": "field_579cbd0984de1",
-            "label": "Amazon Buy Link",
-            "name": "amazon_buy_link",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57a23f17872bf",
-            "label": "Mailchimp URL",
-            "name": "mailchimp_url",
-            "type": "text",
-            "instructions": "Copy and paste this from: <form action=\"COPY_THIS_STUFF_HERE\"......>\r\n",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57a2ae07b8ba7",
-            "label": "Mailer Text",
-            "name": "mailer_text",
+            "key": "field_5832229ed3d74",
+            "label": "Heading",
+            "name": "spacer_heading",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -66,9 +24,9 @@
             "disabled": 0
         },
         {
-            "key": "field_57a399d7f9926",
-            "label": "Share Text",
-            "name": "share_text",
+            "key": "field_583222b0d3d75",
+            "label": "Text",
+            "name": "spacer_text",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -85,14 +43,53 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_583222cad3d76",
+            "label": "Button Text",
+            "name": "button_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_583222d5d3d77",
+            "label": "Button Link",
+            "name": "button_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0
         }
     ],
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "acf-options"
+                "value": "template-about-us.php"
             }
         ]
     ],
@@ -104,5 +101,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1479680173
+    "modified": 1479680761
 }
