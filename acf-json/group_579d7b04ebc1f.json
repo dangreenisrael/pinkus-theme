@@ -60,7 +60,7 @@
             "collapsed": "",
             "min": "",
             "max": "",
-            "layout": "table",
+            "layout": "row",
             "button_label": "Add Row",
             "sub_fields": [
                 {
@@ -120,6 +120,24 @@
                     "new_lines": "wpautop",
                     "readonly": 0,
                     "disabled": 0
+                },
+                {
+                    "key": "field_5835f7adb6366",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "page_link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [],
+                    "taxonomy": [],
+                    "allow_null": 1,
+                    "multiple": 0
                 }
             ]
         }
@@ -141,5 +159,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1470329166
+    "modified": 1479931844
 }

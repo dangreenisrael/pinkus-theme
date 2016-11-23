@@ -11,15 +11,21 @@
                 {% set extra_class = "" %}
 
                 <div class="{{ step.bootstrap_class }}">
-                    <div class="our-services ">
-                        <div class="services-icons">
-                            <i class="{{ step.icon }}"></i>
+                    {% if step.link %}
+                        <a href="{{ step.link }}">
+                    {% endif %}
+                        <div class="our-services ">
+                            <div class="services-icons">
+                                <i class="{{ step.icon }}"></i>
+                            </div>
+                            <h4>{{ step.title }}</h4>
+                            <p>
+                                {{ step.body }}
+                            </p>
                         </div>
-                        <h4>{{ step.title }}</h4>
-                        <p>
-                            {{ step.body }}
-                        </p>
-                    </div>
+                    {% if step.link %}
+                        </a>
+                    {% endif %}
                 </div>
                 {% if loop.index%3 == 0 %}
                     <div class="clearfix hidden-sm"></div>
